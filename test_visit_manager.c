@@ -253,6 +253,7 @@ void test_nonexistent_user(const char* test_file) {
     printf("Nonexistent user test completed.\n");
 }
 
+#ifdef BUILD_TEST
 int main() {
     printf("=== VISIT MANAGER TEST PROGRAM ===\n");
 
@@ -269,3 +270,5 @@ int main() {
 
     return 0;
 }
+
+#endif

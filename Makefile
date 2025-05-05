@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g -fPIC
-LDFLAGS = -lrt # Link to POSIX real-time library
+CFLAGS = -Wall -Wextra -g -fPIC -DBUILD_TEST
+LDFLAGS = -lrt
 SO_NAME = librv.so
 
 all: test_visit_manager $(SO_NAME)
@@ -10,7 +10,7 @@ $(SO_NAME): recent_visits.o
 	$(CC) -shared -o $@ $^ $(LDFLAGS)
 
 test_visit_manager: test_visit_manager.o recent_visits.o
-	$(CC) -o $@ $^ $(LDFLAGS)
+	$(CC) -o $@ $^
 
 test_visit_manager.o: test_visit_manager.c
 	$(CC) $(CFLAGS) -c $<

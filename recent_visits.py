@@ -139,3 +139,4 @@ if __name__ == "__main__":
         visits = vm.get_recent_visits(1)
         for v in visits:
             print(f"Visit ID: {v.visit_id}, URL: {v.url}, Text: {v.text}, Time: {v.time}")
+            
